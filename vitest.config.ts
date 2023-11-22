@@ -4,6 +4,7 @@ import tsConfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
   test: {
+    exclude: ['data', 'node_modules'],
     globals: true,
     root: './'
   },
