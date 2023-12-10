@@ -4,16 +4,18 @@ import { envSchema } from './env/env'
 import { AuthModule } from './auth/auth.module'
 import { HttpModule } from './http/http.module'
 import { EnvModule } from './env/env.module'
+import { EventsModule } from './events/events.module'
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       validate: (env) => envSchema.parse(env),
-      isGlobal: true
+      isGlobal: true,
     }),
     AuthModule,
     HttpModule,
-    EnvModule
-  ]
+    EnvModule,
+    EventsModule,
+  ],
 })
 export class AppModule {}
